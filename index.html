@@ -6,13 +6,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
 </head>
 <body>
-    <section ng-controller="NewsController">
+    <header>
         <h1>NEWS!</h1>
+    </header>
+    <section ng-controller="NewsController">
+        <div id="newsCon">
         <ul>
-            <li ng-repeat="news in newsy">{{news.article}}</li>
+            <li class="article" ng-repeat="element in news"><i ng-click="addToStarred()" class="fa fa-star" aria-hidden="false"></i>   {{ element.title }}</li>
         </ul>
+        </div>
     </section>
 
 

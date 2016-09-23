@@ -1,11 +1,14 @@
 let app = angular.module("newsApp", []);
 
-//create an new xmlhttp request
-funciton
 
 //create controller
-app.controller("NewsController", function($scope,newsy){
-    $scope.news = newsy.getNews();
+app.controller("NewsController", function($scope, NewsGetter){
+    $scope.news = NewsGetter.getNews();
+
+$scope.addToStarred = function(){
+    console.log('working?');
+    if 
+}
 });
 
 
@@ -17,11 +20,14 @@ $http({
     method: 'GET',
     url: "http://puzzlegram.herokuapp.com/news",
 }).then(function (response){
-    angular.copy(response.data, newsy);
+    angular.copy(response.data.news, newsy);
+    console.log(response);
 });
     return{
         getNews: function(){
+            console.log(newsy);
             return newsy;
         }
     };
 });
+
